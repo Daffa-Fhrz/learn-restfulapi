@@ -2,6 +2,8 @@ const { Router } = require('express');
 
 const router = Router();
 
+const { getOne } = require('../config/db');
+
 router.get('/');
 router.get('/:id');
 router.post('/');

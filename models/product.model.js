@@ -4,10 +4,13 @@ const knex = require("../config/db");
 const getAll = async () => {
 	const product = await knex.select().from("product");
 	return product;
-};
+}
 
-const 
+const getOne = async (id) => {
+	const product = await knex.select().from("product").where(id)
+}
 
 module.exports = {
 	getAll,
+	getOne
 };
