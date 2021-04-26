@@ -1,11 +1,10 @@
-const knex = require('knex');
+const knex = require("../config/db");
 
 // find all product
 const findAll = () => {
-	console.log(knex)
-	return knex;
-}
+	return knex.select().from("product");
+};
 
 module.exports = {
-	findAll
+	findAll,
 };
