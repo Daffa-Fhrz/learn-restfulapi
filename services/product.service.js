@@ -36,15 +36,28 @@ const create = (data) => {
 		error = err
 	}
 
-	return[product, error];	
+	return[product, error];
 }
 
-// const delete = () => {}
-// const update = () => {}
+// const delete = (id) => {}
+
+const update = (id, data) => {
+	let product = null;
+	let error = null;
+	try {
+		product = model.update(data);
+	} catch (err) {
+		console.error(err);
+		error = err
+	}
+
+	return[product, error];	
+}
 
 
 module.exports = {
 	getAll,
 	getOne,
 	create,
+	update,
 }

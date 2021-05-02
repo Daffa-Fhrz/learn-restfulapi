@@ -31,7 +31,7 @@ const create = async (data) => {
 const delete = async (id) => {
 	try {
 		const product = await knex("product").where(id).del();
-		return data;
+		return;
 	} catch (err) {
 		throw new Error(err);
 	}
