@@ -26,7 +26,19 @@ const getOne = (id) => {
 	return[product, error];
 }
 
-// const create = () => {}
+const create = (data) => {
+	let product = null;
+	let error = null;
+	try {
+		product = model.create(data);
+	} catch (err) {
+		console.error(err);
+		error = err
+	}
+
+	return[product, error];	
+}
+
 // const delete = () => {}
 // const update = () => {}
 
@@ -34,4 +46,5 @@ const getOne = (id) => {
 module.exports = {
 	getAll,
 	getOne,
+	create,
 }
