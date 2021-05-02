@@ -28,6 +28,15 @@ const create = async (data) => {
 	}
 };
 
+const delete = async (id) => {
+	try {
+		const product = await knex("product").where(id).del();
+		return data;
+	} catch (err) {
+		throw new Error(err);
+	}
+};
+
 module.exports = {
 	getAll,
 	getOne,
