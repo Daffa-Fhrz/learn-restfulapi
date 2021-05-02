@@ -6,13 +6,26 @@ const getAll = () => {
 	try {
 		product = model.getAll();
 	} catch (err) {
+		console.error(err);
 		error = err;
 	}
 
 	return[product, error]
 }
 
-// const getOne = () => {}
+const getOne = (id) => {
+	let product = null;
+	let error = null;
+	try {
+		product = model.getOne(id);
+	} catch (err) {
+		console.error(err);
+		error = err
+	}
+
+	return[product, error];
+}
+
 // const create = () => {}
 // const delete = () => {}
 // const update = () => {}
@@ -20,4 +33,5 @@ const getAll = () => {
 
 module.exports = {
 	getAll,
+	getOne,
 }
