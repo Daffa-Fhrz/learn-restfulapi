@@ -37,8 +37,19 @@ const delete = async (id) => {
 	}
 };
 
+const update = async (id, data) => {
+	try {
+		const product = await knex("product").where(id).update(data);
+		return data;
+	} catch (err) {
+		throw new Error(err);
+	}
+};
+
 module.exports = {
 	getAll,
 	getOne,
-	create
+	create,
+	delete,
+	update
 };
