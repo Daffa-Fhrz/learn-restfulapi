@@ -20,7 +20,7 @@ const getOne = (id) => {
 		product = model.getOne(id);
 	} catch (err) {
 		console.error(err);
-		error = err
+		error = err;
 	}
 
 	return[product, error];
@@ -33,13 +33,24 @@ const create = (data) => {
 		product = model.create(data);
 	} catch (err) {
 		console.error(err);
-		error = err
+		error = err;
 	}
 
 	return[product, error];
 }
 
-// const delete = (id) => {}
+const delete = (id) => {
+	let product = null;
+	let error = null;
+	try {
+		product = model.delete(data);
+	} catch (err) {
+		console.error(err);
+		error = err;
+	}
+
+	return[product, error];	
+}
 
 const update = (id, data) => {
 	let product = null;
@@ -48,7 +59,7 @@ const update = (id, data) => {
 		product = model.update(data);
 	} catch (err) {
 		console.error(err);
-		error = err
+		error = err;
 	}
 
 	return[product, error];	
