@@ -28,7 +28,7 @@ const create = async (data) => {
 	}
 };
 
-const delete = async (id) => {
+const deleteProd = async (id) => {
 	try {
 		const product = await knex.select().where(id).del();
 		const deletedProduct = await knex("product").where(id).del();
@@ -51,6 +51,6 @@ module.exports = {
 	getAll,
 	getOne,
 	create,
-	delete,
+	deleteProd,
 	update
 };

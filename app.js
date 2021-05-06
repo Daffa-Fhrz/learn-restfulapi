@@ -5,6 +5,9 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// middleware
+app.use(express.json());
+
 // router
 // import router
 const product = require("./routes/product.route");

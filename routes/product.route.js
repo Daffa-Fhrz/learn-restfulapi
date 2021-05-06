@@ -2,11 +2,11 @@ const { Router } = require('express');
 
 const router = Router();
 
-const { getOne } = require('../config/db');
+const { create } = require("../controllers/product.controller");
 
 router.get('/');
 router.get('/:id');
-router.post('/');
+router.post('/', create);
 router.put('/:id');
 
 module.exports = router;
