@@ -92,7 +92,7 @@ const update = (req, res) => {
 	const data = {
 		...req.body,
 		"updated_at": new Date
-	}
+	};
 
 	productModel.update(req.params, data)
 		.then(product => {
@@ -123,7 +123,7 @@ const deleteProd = (req, res) => {
 	const data = {
 		...req.body,
 		"updated_at": new Date
-	}
+	};
 
 
 	console.log(productModel.deleteProd);
