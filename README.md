@@ -81,12 +81,13 @@
   "code": "number",
   "status": "Created",
 	"data": [
+		{
 		"id": "number",
 		"name": "string",
 		"description": "text",
 		"price": "number"
-    }
-  ],
+    		}
+  	],
 }
 ```
 
