@@ -1,50 +1,26 @@
 const knex = require("../config/db");
 
 // find all product
-const getAll = async () => {
-	try {
-		const product = await knex.select().from("product");
-		return product;
-	} catch (err) {
-		throw new Error(err);
-	}
+const getAll = () => {
+	return knex.select().from("product");
 };
 
-const getOne = async (id) => {
-	try {
-		const product = await knex.select().from("product").where(id);
-		return product;
-	} catch (err) {
-		throw new Error(err);
-	}
+const getOne = (id) => {
+	const product = knex.select().from("product").where(id);
+	return product;
 };
 
-const create = async (data) => {
-	try {
-		const product = await knex("product").insert(data);
-		return data;
-	} catch (err) {
-		throw new Error(err);
-	}
+const create = (data) => {
+	const product = knex("product").insert(data);
+	return data;
 };
 
-const deleteProd = async (id) => {
-	try {
-		const product = await knex.select().where(id).del();
-		const deletedProduct = await knex("product").where(id).del();
-		return product;
-	} catch (err) {
-		throw new Error(err);
-	}
+const deleteProd = (id) => {
+	return knex("product").where(id).del();
 };
 
-const update = async (id, data) => {
-	try {
-		const product = await knex("product").where(id).update(data);
-		return data;
-	} catch (err) {
-		throw new Error(err);
-	}
+const update = (id, data) => {
+	return knex("product").where(id).update(data);
 };
 
 module.exports = {
