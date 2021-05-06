@@ -43,14 +43,16 @@
 {
 	"code": "number",
 	"status": "string",
-	"data": {
-		"id": "ObjectId",
-		"name": "string",
-		"price": "string",
-		"quantity": "number",
-		"createdAt": "date",
-		"updatedAt": "date"
-	}
+	"data": [
+		{
+			"id": "ObjectId",
+			"name": "string",
+			"price": "string",
+			"quantity": "number",
+			"createdAt": "date",
+			"updatedAt": "date"
+		}
+	]
 }
 ```
 
@@ -76,14 +78,13 @@
 
 ```json
 {
-  code: 201,
-    "status": "Created",
-		  "data": [
-			  {
-				  "id": "number",
-					"name": "string",
-					"description": "text",
-					"price": "number"
+  "code": "number",
+  "status": "Created",
+	"data": [
+		"id": "number",
+		"name": "string",
+		"description": "text",
+		"price": "number"
     }
   ],
 }
