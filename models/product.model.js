@@ -1,13 +1,11 @@
 const knex = require("../config/db");
 
-// find all product
 const getAll = () => {
 	return knex.select().from("product");
 };
 
 const getOne = (id) => {
-	const product = knex.select().from("product").where(id);
-	return product;
+	return knex.select().from("product").where(id);
 };
 
 const create = (data) => {
@@ -15,11 +13,15 @@ const create = (data) => {
 };
 
 const deleteProd = (id) => {
-	return knex("product").where(id).del();
+	const deleting = knex("product").where(id).del();
+
+	return Promise.all([getOne(id), deleting]);
 };
 
 const update = (id, data) => {
-	return knex("product").where(id).update(data);
+	const updating = knex("product").where(id).update(data);
+
+	return Promise.all([updating, getOne(id)]);
 };
 
 module.exports = {
