@@ -2,9 +2,9 @@ const { Router } = require('express');
 
 const router = Router();
 
-const { create } = require("../controllers/product.controller");
+const { create, getAll } = require("../controllers/product.controller");
 
-router.get('/');
+router.get('/', getAll);
 router.get('/:id');
 router.post('/', create);
 router.put('/:id');
