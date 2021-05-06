@@ -11,8 +11,7 @@ const getOne = (id) => {
 };
 
 const create = (data) => {
-	const product = knex("product").insert(data);
-	return data;
+	return knex("product").insert(data);
 };
 
 const deleteProd = (id) => {
